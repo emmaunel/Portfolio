@@ -1,0 +1,89 @@
+/* global $, localStorage, Shell */
+
+const errors ={
+    invalidDirectory: 'Error: not a valid directory',
+    noWriteAccess: 'Error: you do not have write access to this directory',
+    fileNotFound: 'Error: file not found in current directory',
+    fileNotSpecified: 'Error: you did not specify a file'
+}
+
+const struct = {
+    root: ['about', 'resume', 'contact', 'talks'],
+    projects: ['nodemessage', 'map', 'dotify', 'slack_automation'],
+    skills: ['proficient', 'familiar', 'learning']
+}
+
+const commands = {}
+let systemData = {}
+const rootPath = 'user/ayo_code/root'
+
+const getDirectory = () => localStorage.directory
+const setDirectory = (dir) => {localStorage.directory = dir}
+
+const registerFullscreenToggle = () =>{
+    $('.button.green').click(() => {
+        $('.terminal-window').toggleClass('fullscreen')
+    })
+}
+
+commands.mkdir = () => errors.noWriteAccess
+
+commands.touch = () => errors.noWriteAccess
+
+commands.rm = () => errors.noWriteAccess
+
+commands.ls = () => systemData[getDirectory()]
+
+commands.help = () => systemData.help
+
+commands.path = () => {
+    const dir = getDirectory()
+    return dir === 'root' ? rootPath : `${rootPath}/${dir}`
+}
+
+commands.history = () => {
+    let history = localStorage.history
+    history = history ? Object.values(JSON.parse(history)) : []
+    return `<p>${history.join('<br>')}</p>`
+}
+
+commands.cd = (newDirectory) => {
+    const currDir = getDirectory()
+    const dirs = ['root', 'projects', 'skills']
+    const newDir = newDirectory ? newDirectory.trim() : ''
+
+    if (dirs.includes(newDir) && currDir !== newDir) {
+        setDirectory(newDir)
+    } else if (newDir === '') {
+        setDirectory('root')
+    } else {
+        return errors.invalidDirectory
+    }
+    return null
+}
+
+// display contents of specified file
+commands.cat = (filename) => {
+    if (!filename) return errors.fileNotSpecified
+
+    const dir = getDirectory()
+    const fileKey = filename.split('.')[0]
+
+    if (fileKey in systemData && struct[dir].includes(fileKey)) {
+        return systemData[fileKey]
+    }
+
+    return errors.fileNotFound
+}
+
+// initialize cli
+$(() => {
+    registerFullscreenToggle()
+    const cmd = document.getElementById('terminal')
+    const terminal = new Shell(cmd, commands)
+
+    $.ajaxSetup({ cache: false })
+    $.get('data/system_data.json', (data) => {
+        systemData = data
+    })
+})
