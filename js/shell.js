@@ -104,7 +104,7 @@ class Shell {
             `<p class="hidden">
         <span class="prompt">
           <span class="root">root</span>
-          <span class="tick">❯</span>
+          <span class="tick">></span>
         </span>
         <span contenteditable="true" class="input"></span>
       </p>`
