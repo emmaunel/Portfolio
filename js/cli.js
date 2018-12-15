@@ -8,8 +8,9 @@ const errors ={
 }
 
 const struct = {
-    root: ['about', 'resume', 'contact', 'talks'],
-    projects: ['nodemessage', 'map', 'dotify', 'slack_automation'],
+    root: ['about', 'resume', 'contact'],
+    // projects: ['nodemessage', 'map', 'dotify', 'slack_automation'],
+    projects: ['devsfolio', 'promptr', 'chinese'],
     skills: ['proficient', 'familiar', 'learning']
 }
 
@@ -54,7 +55,7 @@ commands.cd = (newDirectory) => {
 
     if (dirs.includes(newDir) && currDir !== newDir) {
         setDirectory(newDir)
-    } else if (newDir === '') {
+    } else if (newDir === '..') {
         setDirectory('root')
     } else {
         return errors.invalidDirectory
