@@ -10,7 +10,7 @@ const errors ={
 const struct = {
     root: ['about', 'resume', 'contact'],
     // projects: ['nodemessage', 'map', 'dotify', 'slack_automation'],
-    projects: ['devsfolio', 'promptr', 'chinese'],
+    projects: ['devsfolio', 'promptr', 'chinese', 'future'],
     skills: ['proficient', 'familiar', 'learning']
 }
 
@@ -50,7 +50,7 @@ commands.history = () => {
 
 commands.cd = (newDirectory) => {
     const currDir = getDirectory()
-    const dirs = ['root', 'projects', 'skills']
+    const dirs = ['root', 'projects', 'skills', 'future']
     const newDir = newDirectory ? newDirectory.trim() : ''
 
     if (dirs.includes(newDir) && currDir !== newDir) {
