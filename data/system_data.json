@@ -12,7 +12,7 @@
   "devsfolio": "<div><h4>Devsfolio</h4><p>This is a Social App for Developers to interact with other users through messages and sharing projects.</p><a class='blue' target='_blank' href='https://github.com/Madonahs/Devsfolio' >Source Code</a></div>",
   "promptr": "<div><h4>Promptr</h4><p>Promptr is a pocket size teleprompter to practice your speeches, scripts and so on.</p><a class='blue' target='_blank' href='https://github.com/emmaunel/EasyTeleprompter' >Source Code</a></div>",
   "chinese": "<div><h4>Learning Chinese</h4><p>This app tells everyone the chinese. It has a beautiful and interactive UI. It have five catorigies of the most commonly used words. It also speaks when you click on each words.</p><p>This is my winning app for the national congressional app challenge</p><a class='blue' target='_blank' href='https://github.com/emmaunel/LearningChinese' >Source Code</a></div>",
-  "future":"<p>🚧 Under constuction 🚧</p>",
+  "future":"<ul><li>Fluffy</li><p>🚧 Under constuction 🚧</p></ul>",
   "skills": "<p>proficient.txt &nbsp&nbsp familiar.txt <br>learning.txt</p>",
   "help": "<div> <ul> <li><strong>path</strong> - display current directory</li><li><strong>cat FILENAME</strong> - display FILENAME in window</li><li><strong>cd DIRECTORY</strong> - move into DIRECTORY or just cd .. to return to root</li><li><strong>ls</strong> - show files in current directory</li><li><strong>history</strong> - see your command history</li><li><strong>clear</strong> - clear current window</ul></div>"
 }
