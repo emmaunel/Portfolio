@@ -15,7 +15,7 @@ class Shell {
     }
 
     setupListeners (term) {
-        $('terminal').mouseup(() => $('.input').last().focus())
+        $('#terminal').mouseup(() => $('.input').last().focus())
 
         term.addEventListener('keyup', (evt) => {
             const keyUp = 38
@@ -53,6 +53,8 @@ class Shell {
                     $('.input').last().html(ret)
                   }
                 }
+                evt.preventDefault()
+                $('.end').focus()
                 // if (key === keyUp && localStorage.historyIndex >= 0) {
                 //     $('.input').last().html(`${history[localStorage.historyIndex]}<span class="end"><span>`)
                 //     localStorage.historyIndex -= 1

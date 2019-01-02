@@ -21,41 +21,57 @@ const rootPath = 'user/ayo_code/root'
 const getDirectory = () => localStorage.directory
 const setDirectory = (dir) => {localStorage.directory = dir}
 
+// Turn on fullscreen
 const registerFullscreenToggle = () =>{
     $('.button.green').click(() => {
         $('.terminal-window').toggleClass('fullscreen')
     })
 }
 
+// create new directory in current directory
 commands.mkdir = () => errors.noWriteAccess
 
+// create new directory in current directory
 commands.touch = () => errors.noWriteAccess
 
+// remove file from current directory
 commands.rm = () => errors.noWriteAccess
 
-commands.ls = () => systemData[getDirectory()]
+// commands.ls = () => systemData[getDirectory()]
+// view contents of specifed directory
+commands.ls = (directory) =>{
+  if (directory === '..' || directory === '~') {
+    return systemData['root']
+  }
+  return systemData[getDirectory()]
+}
 
+// view list of possible commands
 commands.help = () => systemData.help
 
+// display current path
 commands.path = () => {
     const dir = getDirectory()
     return dir === 'root' ? rootPath : `${rootPath}/${dir}`
 }
 
+// see command history
 commands.history = () => {
     let history = localStorage.history
     history = history ? Object.values(JSON.parse(history)) : []
     return `<p>${history.join('<br>')}</p>`
 }
 
+// move into specifed directory
 commands.cd = (newDirectory) => {
     const currDir = getDirectory()
-    const dirs = ['root', 'projects', 'skills']
+    // const dirs = ['root', 'projects', 'skills']
+    const dirs = Object.keys(struct)
     const newDir = newDirectory ? newDirectory.trim() : ''
 
     if (dirs.includes(newDir) && currDir !== newDir) {
         setDirectory(newDir)
-    } else if (newDir === '..') {
+    } else if (newDir === '' || newDir === '~' || (newDir === '..' && dirs.includes(currDir))) {
         setDirectory('root')
     } else {
         return errors.invalidDirectory
