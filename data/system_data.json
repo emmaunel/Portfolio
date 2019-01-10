@@ -8,11 +8,12 @@
   "familiar": "<ul><li>HTML & CSS</li><li>Sketch</li></ul>",
   "learning": "<ul><li>C++</li><li>Shell Programming</li></ul>",
   "root": "<p>about &nbsp&nbsp <span class='dir'>projects</span> &nbsp&nbsp <span class='dir'>skills</span><br>contact &nbsp&nbsp resume &nbsp&nbsp<br></p>",
-  "projects": "<p> devsfolio.txt &nbsp&nbsp promptr.txt <br>chinese.txt &nbsp&nbsp fluffy.txt</br></p>",
+  "projects": "<p> devsfolio.txt &nbsp&nbsp promptr.txt &nbsp&nbsp chinese.txt<br>lithp.txt &nbsp&nbsp fluffy.txt</br></p>",
   "devsfolio": "<div><h4>Devsfolio</h4><p>This is a Social App for Developers to interact with other users through messages and sharing projects.</p><a class='blue' target='_blank' href='https://github.com/Madonahs/Devsfolio' >Source Code</a></div>",
   "promptr": "<div><h4>Promptr</h4><p>Promptr is a pocket size teleprompter to practice your speeches, scripts and so on.</p><a class='blue' target='_blank' href='https://github.com/emmaunel/EasyTeleprompter' >Source Code</a></div>",
   "chinese": "<div><h4>Learning Chinese</h4><p>This app tells everyone the chinese. It has a beautiful and interactive UI. It have five catorigies of the most commonly used words. It also speaks when you click on each words.</p><p>This is my winning app for the national congressional app challenge</p><a class='blue' target='_blank' href='https://github.com/emmaunel/LearningChinese' >Source Code</a></div>",
   "fluffy":"<div><h4>Fluffy Language</h4><p>Fluffy is an intrepreter language similar to python. The goal of this project to understand how programming language are made. Originally, it was meant to be a esoteric language where \"fluffy\" is the only allowed keyword. but that will be future implememtation</p><a class='blue' target='_blank' href='https://github.com/emmaunel/Fluffy_Language' >Source Code</a></div>",
+  "lithp": "<div><h4>Lithp</h4><p>Lithp is an interpreter for John McCarthy's original Lisp.</p><a class='blue' target='_blank' href='https://github.com/emmaunel/lithp' >Source Code</a></div>",
   "future":"<ul><li>Fluffy</li><p>🚧 Under constuction 🚧</p></ul>",
   "skills": "<p>proficient.txt &nbsp&nbsp familiar.txt <br>learning.txt</p>",
   "help": "<div> <ul> <li><strong>path</strong> - display current directory</li><li><strong>cat FILENAME</strong> - display FILENAME in window</li><li><strong>cd DIRECTORY</strong> - move into DIRECTORY or just cd .. to return to root</li><li><strong>ls</strong> - show files in current directory</li><li><strong>history</strong> - see your command history</li><li><strong>clear</strong> - clear current window</ul></div>"
