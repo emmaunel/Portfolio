@@ -1,1 +1,1 @@
-<? php echo("HELLO") ?>
+HELLO
